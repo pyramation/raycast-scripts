@@ -16,7 +16,6 @@
 # @raycast.authorURL https://raycast.com/wchen298
 
 import sys
-from common import mantra
 from elevenlabs import play, stream, VoiceSettings, save
 from elevenlabs.client import ElevenLabs
 import itertools

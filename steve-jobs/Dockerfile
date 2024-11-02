@@ -18,5 +18,8 @@ COPY . .
 # Create empty .env file if it doesn't exist
 RUN touch .env
 
+# Set Python path to include src directory
+ENV PYTHONPATH="${PYTHONPATH}:/app/src"
+
 # Command to run when container starts
-CMD ["python"]
+CMD ["python", "src/main.py"]

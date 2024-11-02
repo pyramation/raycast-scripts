@@ -1,8 +1,7 @@
 .PHONY: build run shell clean
 
-# Docker image name
-IMAGE_NAME = steve-jobs-py
-CONTAINER_NAME = steve-jobs-py-container
+IMAGE_NAME = steve-jobs-app
+CONTAINER_NAME = steve-jobs-container
 
 build:
 	docker build -t $(IMAGE_NAME) .
@@ -12,6 +11,12 @@ run:
 		--name $(CONTAINER_NAME) \
 		-v $(PWD):/app \
 		$(IMAGE_NAME)
+
+run-dev:
+	docker run --rm -it \
+		--name $(CONTAINER_NAME) \
+		-v $(PWD):/app \
+		$(IMAGE_NAME) python src/main.py
 
 shell:
 	docker run --rm -it \
