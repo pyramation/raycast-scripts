@@ -24,7 +24,7 @@ import os
 from dotenv import load_dotenv
 from langchain_anthropic import ChatAnthropic
 
-local_dotenv_path = os.path.join(os.path.dirname(__file__), "local.env")
+local_dotenv_path = os.path.join(os.path.dirname(__file__), "../local.env")
 load_dotenv(local_dotenv_path)
 
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
